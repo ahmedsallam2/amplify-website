@@ -1,0 +1,10 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - SHORT_COMMIT=$(echo "$AWS_COMMIT_ID" | cut -c1-7); BUILD_TIME=$(date -u +"%Y-%m-%d %H:%M UTC"); sed -i "s|__BRANCH__|${AWS_BRANCH}|g; s|__COMMIT__|${SHORT_COMMIT}|g; s|__JOB_ID__|${AWS_JOB_ID}|g; s|__BUILD_TIME__|${BUILD_TIME}|g; s|__SITE_ENV__|${SITE_ENV:-production}|g" *.html
+  artifacts:
+    baseDirectory: .
+    files:
+      - '**/*'

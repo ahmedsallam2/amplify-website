@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amplify Hosting Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-env="__SITE_ENV__">
+  <header class="site-header">
+    <a class="brand" href="/">Amplify Hosting Project</a>
+    <nav>
+      <a href="/" aria-current="page">Home</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="ticket">
+      <div class="ticket-main">
+        <p class="ticket-kicker">Deployment ticket</p>
+        <h1>Hello from AWS Amplify</h1>
+        <p class="lead">This page is built and deployed automatically every time code is pushed to GitHub. The stub on the right is filled in by the build itself.</p>
+        <span class="stamp" aria-hidden="true">Deployed</span>
+      </div>
+      <dl class="ticket-stub">
+        <div><dt>Environment</dt><dd class="env" data-fill>__SITE_ENV__</dd></div>
+        <div><dt>Branch</dt><dd data-fill>__BRANCH__</dd></div>
+        <div><dt>Commit</dt><dd class="mono" data-fill>__COMMIT__</dd></div>
+        <div><dt>Build</dt><dd data-fill>#__JOB_ID__</dd></div>
+        <div><dt>Built at</dt><dd data-fill>__BUILD_TIME__</dd></div>
+      </dl>
+    </article>
+
+    <section class="notes">
+      <h2>How this site ships</h2>
+      <ol class="flow">
+        <li><strong>Push</strong> a commit to the <code>main</code> branch on GitHub.</li>
+        <li><strong>Build</strong> starts in Amplify and writes the details above into the page.</li>
+        <li><strong>Deploy</strong> copies the files to the CDN, served over HTTPS.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">Static HTML and CSS, hosted on AWS Amplify.</footer>
+  <script src="fill.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About · Amplify Hosting Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-env="__SITE_ENV__">
+  <header class="site-header">
+    <a class="brand" href="/">Amplify Hosting Project</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about.html" aria-current="page">About</a>
+    </nav>
+  </header>
+
+  <main class="prose">
+    <h1>What this project uses</h1>
+    <p>Everything here runs on AWS Amplify Hosting with no servers to manage. These are the Amplify features set up for this site.</p>
+    <dl class="features">
+      <div><dt>GitHub continuous deployment</dt><dd>Each push to a connected branch triggers a new build and deploy.</dd></div>
+      <div><dt>Branch environments</dt><dd><code>main</code> is production, <code>dev</code> is a separate site with its own URL.</dd></div>
+      <div><dt>Environment variables</dt><dd><code>SITE_ENV</code> is set per branch and written into the page at build time.</dd></div>
+      <div><dt>Password protection</dt><dd>The <code>dev</code> site asks for a username and password.</dd></div>
+      <div><dt>Rewrites and redirects</dt><dd>Unknown paths show a custom 404 page, and <code>/home</code> redirects to the home page.</dd></div>
+      <div><dt>Custom headers</dt><dd>Security headers are added to every response.</dd></div>
+      <div><dt>Pull request previews</dt><dd>Each pull request gets a temporary preview URL.</dd></div>
+      <div><dt>Notifications and monitoring</dt><dd>Build results are emailed, and traffic is visible in the Amplify metrics.</dd></div>
+    </dl>
+  </main>
+
+  <footer class="site-footer">Static HTML and CSS, hosted on AWS Amplify.</footer>
+  <script src="fill.js"></script>
+</body>
+</html>
